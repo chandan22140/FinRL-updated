@@ -32,6 +32,7 @@ INDICATORS = [
 
 # Model Parameters
 A2C_PARAMS = {"n_steps": 5, "ent_coef": 0.01, "learning_rate": 0.0007}
+DQN_PARAMS = {"n_steps": 5, "ent_coef": 0.01, "learning_rate": 0.0007}
 PPO_PARAMS = {
     "n_steps": 2048,
     "ent_coef": 0.01,
@@ -58,6 +59,13 @@ ERL_PARAMS = {
     "eval_times": 64,  # bug fix:KeyError: 'eval_times' line 68, in get_model model.eval_times = model_kwargs["eval_times"]
 }
 RLlib_PARAMS = {"lr": 5e-5, "train_batch_size": 500, "gamma": 0.99}
+
+PPO2_PARAMS = {
+                    "ent_coef":0.02,
+                    "n_steps": 2048,
+                    "learning_rate": 0.00015,
+                    "batch_size": 256
+                    }
 
 
 # Possible time zones

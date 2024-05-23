@@ -12,10 +12,10 @@ matplotlib
 # data handling
 numpy>=1.17.3
 pandas>=1.1.5
-
-#hooks
+stable-baselines3
+gymnasium
 pre-commit
-pyfolio
+
 
 # testing requirements
 pytest
@@ -34,15 +34,15 @@ setuptools>=65.5.0
 sphinx
 sphinx_rtd_theme
 
-
+matplotlib
 SQLAlchemy
 stable-baselines3[extra]
 stockstats>=0.4.0
 swig
-
+pandas-ta
 tensorboardX
 wheel>=0.33.6
 wrds
-
-# market data & paper trading API
+scikit-learn  
 yfinance
+pyfolio

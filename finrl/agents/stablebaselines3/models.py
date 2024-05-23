@@ -10,6 +10,8 @@ from stable_baselines3 import DDPG
 from stable_baselines3 import PPO
 from stable_baselines3 import SAC
 from stable_baselines3 import TD3
+# from stable_baselines3 import DQN
+# from stable_baselines3 import HER
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.noise import NormalActionNoise
 from stable_baselines3.common.noise import OrnsteinUhlenbeckActionNoise
@@ -19,7 +21,7 @@ from finrl import config
 from finrl.meta.env_stock_trading.env_stocktrading import StockTradingEnv
 from finrl.meta.preprocessor.preprocessors import data_split
 
-MODELS = {"a2c": A2C, "ddpg": DDPG, "td3": TD3, "sac": SAC, "ppo": PPO}
+MODELS = {"a2c": A2C, "ddpg": DDPG, "td3": TD3, "sac": SAC, "ppo": PPO, "ppo2": PPO}
 
 MODEL_KWARGS = {x: config.__dict__[f"{x.upper()}_PARAMS"] for x in MODELS.keys()}
 
@@ -425,6 +427,8 @@ class DRLEnsembleAgent:
         DDPG_model_kwargs,
         SAC_model_kwargs,
         TD3_model_kwargs,
+        PPO2_model_kwargs,
+        # HER_model_kwargs,
         timesteps_dict,
     ):
         # Model Parameters
@@ -434,6 +438,8 @@ class DRLEnsembleAgent:
             "ddpg": DDPG_model_kwargs,
             "sac": SAC_model_kwargs,
             "td3": TD3_model_kwargs,
+            "ppo2": PPO2_model_kwargs,
+            # "her": HER_model_kwargs,
         }
         # Model Sharpe Ratios
         model_dct = {k: {"sharpe_list": [], "sharpe": -1} for k in MODELS.keys()}
